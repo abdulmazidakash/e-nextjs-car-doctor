@@ -11,7 +11,7 @@ export default async function ServiceDetailsPage({params}) {
 	console.log(data);
 	
   return (
-	<div className='my-8'>
+	<div className='container mx-auto my-8'>
 		<section className='flex justify-center'>
 			<figure className='relative'>
 				<Image
@@ -20,10 +20,24 @@ export default async function ServiceDetailsPage({params}) {
 				height={300}
 				alt={'banner'}
 				/>
-				<div className='absolute w-full h-full border-2 border-red-400'></div>
+				<div className='absolute w-full h-full border-2 border-red-400 transparent-layer top-0 overlay-bg'>
+					<div className='w-full h-full font-bold text-2xl flex items-center ps-16'>
+					<div>
+						<h1 className='text-white'>Service Details</h1>
+					</div>
+					</div>
+				</div>
 			</figure>
 		</section>
-		<p>{p.id}</p>
+		<section>
+			<Image
+			src={data.img} 
+			width={400} 
+			height={200} 
+			alt={data.title}
+			/>
+			<h1 className='font-bold text-3xl'>{data.title}</h1>
+		</section>
 	</div>
   )
 }
