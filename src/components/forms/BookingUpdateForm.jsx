@@ -42,14 +42,14 @@ const BookingUpdateForm = ({ data }) => {
 	console.table(bookingPayload);
 // `http://localhost:3000/api/service/${p.id}`
     const res = await fetch(
-      "http://localhost:3000/api/service",
+      `http://localhost:3000/api/my-bookings/${data._id}`,
       {
-        method: "POST",
+        method: "PATCH",
         body: JSON.stringify(bookingPayload),
       }
     );
-    const postedResponse = await res.json();
-	console.log('posted data -------->',postedResponse);
+    const updatedResponse = await res.json();
+	console.log('updated data -------->',updatedResponse);
   router.push('/my-bookings')
   };
 
@@ -125,9 +125,9 @@ const BookingUpdateForm = ({ data }) => {
           </div>
           <button
             type="submit"
-            className="w-full btn btn-accent"
+            className="w-full btn btn-info"
           >
-            Order Confirm
+            Update Confirm
           </button>
         </form>
       </div>
