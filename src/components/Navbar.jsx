@@ -46,14 +46,17 @@ export default function Navbar() {
 			<div className="navbar-end">
 				{ status == 'authenticated' ? 
 				(<>
+				<div className='flex items-center list-none gap-2'>
 				<li><Image
 				src={session?.user?.image}
-				width={50}
-				height={50}
+				width={40}
+				height={40}
 				alt='user-logo'
+				className='rounded-full'
 				
 				/> </li>
 				<li className='btn btn-error' onClick={() => signOut()}>Logout</li>
+				</div>
 				</>) : 
 				(<>
 				<Link href={'/register'} className='btn btn-error btn-soft'>Register</Link>
