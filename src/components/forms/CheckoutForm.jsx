@@ -1,10 +1,12 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
 const CheckoutForm = ({ data }) => {
+  const router = useRouter();
 	console.log(data);
   const { data: session } = useSession();
   
@@ -43,6 +45,7 @@ const CheckoutForm = ({ data }) => {
     );
     const postedResponse = await res.json();
 	console.log('posted data -------->',postedResponse);
+  router.push('/my-bookings')
   };
 
   
