@@ -35,9 +35,9 @@ const CheckoutForm = ({ data }) => {
       service_price: data.price,
     };
 	console.table(bookingPayload);
-// `http://localhost:3000/api/service/${p.id}`
+// `https://nextjs-car-doctor-sandy.vercel.app/api/service/${p.id}`
     const res = await fetch(
-      "http://localhost:3000/api/service",
+      "https://nextjs-car-doctor-sandy.vercel.app/api/service",
       {
         method: "POST",
         body: JSON.stringify(bookingPayload),
